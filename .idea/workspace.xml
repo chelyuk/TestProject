@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7ab95c0-290a-4dbf-8482-81a867b7e999" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MyTest.java" afterDir="false" />
+    <list default="true" id="d7ab95c0-290a-4dbf-8482-81a867b7e999" name="Changes" comment="Usage of request and response specifications">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SendPayloadAsFile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,22 +37,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.MyTest.partialUpdateBooking">
-    <configuration name="MyTest.createBooking" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TestProject" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="createBooking" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.MyTest.sendPayloadAsFile">
     <configuration name="MyTest.deleteBooking" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestProject" />
       <option name="PACKAGE_NAME" value="" />
@@ -92,6 +81,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyTest.sendPayloadAsFile" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="sendPayloadAsFile" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyTest.validateSingleFieldUsingHamcrest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestProject" />
       <option name="PACKAGE_NAME" value="" />
@@ -106,11 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.MyTest.sendPayloadAsFile" />
         <item itemvalue="TestNG.MyTest.partialUpdateBooking" />
-        <item itemvalue="TestNG.MyTest.getBookingIds" />
-        <item itemvalue="TestNG.MyTest.validateSingleFieldUsingHamcrest" />
         <item itemvalue="TestNG.MyTest.deleteBooking" />
-        <item itemvalue="TestNG.MyTest.createBooking" />
+        <item itemvalue="TestNG.MyTest.validateSingleFieldUsingHamcrest" />
+        <item itemvalue="TestNG.MyTest.getBookingIds" />
       </list>
     </recent_temporary>
   </component>
@@ -123,6 +124,21 @@
       <option name="presentableId" value="Default" />
       <updated>1663141487732</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1663155373716</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663155373716</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Usage of request and response specifications">
+      <created>1663156071125</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663156071125</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +154,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Usage of request and response specifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="Usage of request and response specifications" />
   </component>
 </project>

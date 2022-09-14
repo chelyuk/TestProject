@@ -1,4 +1,5 @@
-import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -10,8 +11,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
+import java.io.File;
+
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.request;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -26,15 +28,17 @@ public class MyTest {
 
     @BeforeClass
     public void beforeClass() {
-        requestSpecification = given()
-                .baseUri(BASE_URI)
-                .contentType(CONTENT_TYPE)
-                .log().all();
+        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+        requestSpecBuilder.setBaseUri(BASE_URI);
+        requestSpecBuilder.setContentType(ContentType.JSON);
+        requestSpecBuilder.log(LogDetail.ALL);
+        requestSpecification = requestSpecBuilder.build();
 
-        responseSpecification = RestAssured.expect()
-                .contentType(ContentType.JSON)
-                .statusCode(200)
-                .logDetail(LogDetail.ALL);
+        ResponseSpecBuilder responseSpecBuilder = new ResponseSpecBuilder()
+                .expectStatusCode(200)
+                .expectContentType(ContentType.JSON)
+                .log(LogDetail.ALL);
+        responseSpecification = responseSpecBuilder.build();
     }
 
     @Test
@@ -102,7 +106,7 @@ public class MyTest {
     public void partialUpdateBooking() {
         String payload = "{\n" +
                 "   \"firstname\" : \"Abishek\",\n" +
-                "   \"lastname\" : \"Chauhan\",\n" +
+                "   \"lastname\" : \"Chauhan\"\n" +
                 "}";
         given()
                 .baseUri(BASE_URI)
@@ -126,7 +130,7 @@ public class MyTest {
                 .header("Cookie", "token=" + getToken)
                 .log().all()
         .when()
-                .delete("/booking/10")
+                .delete("/booking/15")
         .then()
                 .log().all()
                 .assertThat()
@@ -189,5 +193,17 @@ public class MyTest {
         assertThat(bookingID, equalTo(15));
 //        Assert using TestNG
         Assert.assertEquals(bookingID, 15);
+    }
+//    Send payload as file
+    @Test
+    public void sendPayloadAsFile() {
+        File payload = new File("src/main/resources/SendPayloadAsFile.json");
+        Response response = given().spec(requestSpecification)
+                .header("Cookie", "token=" + getToken)
+                .body(payload)
+        .when()
+                .patch("/booking/15")
+        .then()
+                .extract().response();
     }
 }
