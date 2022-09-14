@@ -43,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.MyTest.validateSingleFieldUsingHamcrest">
+  <component name="RunManager" selected="TestNG.MyTest.partialUpdateBooking">
     <configuration name="MyTest.createBooking" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestProject" />
       <option name="PACKAGE_NAME" value="" />
@@ -61,6 +61,18 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest" />
       <option name="METHOD_NAME" value="deleteBooking" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.getBookingIds" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestProject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="getBookingIds" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -92,25 +104,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest.validateStatusCode" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TestProject" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="validateStatusCode" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.MyTest.partialUpdateBooking" />
+        <item itemvalue="TestNG.MyTest.getBookingIds" />
         <item itemvalue="TestNG.MyTest.validateSingleFieldUsingHamcrest" />
         <item itemvalue="TestNG.MyTest.deleteBooking" />
         <item itemvalue="TestNG.MyTest.createBooking" />
-        <item itemvalue="TestNG.MyTest.validateStatusCode" />
-        <item itemvalue="TestNG.MyTest.partialUpdateBooking" />
       </list>
     </recent_temporary>
   </component>

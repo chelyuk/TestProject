@@ -1,10 +1,17 @@
+import io.restassured.RestAssured;
+import io.restassured.filter.log.LogDetail;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 import org.testng.Assert;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.request;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -12,8 +19,23 @@ import static org.hamcrest.Matchers.equalTo;
 public class MyTest {
 
     public String getToken;
+    RequestSpecification requestSpecification;
+    ResponseSpecification responseSpecification;
     private static final String BASE_URI = "https://restful-booker.herokuapp.com";
     private static final String CONTENT_TYPE = "application/json";
+
+    @BeforeClass
+    public void beforeClass() {
+        requestSpecification = given()
+                .baseUri(BASE_URI)
+                .contentType(CONTENT_TYPE)
+                .log().all();
+
+        responseSpecification = RestAssured.expect()
+                .contentType(ContentType.JSON)
+                .statusCode(200)
+                .logDetail(LogDetail.ALL);
+    }
 
     @Test
     public void authToken() {
@@ -44,9 +66,9 @@ public class MyTest {
                 .extract().response().path("bookingid[0]");
         System.out.println("BookingID: " + bookingID);
 //      Assert using Hamcrest
-        assertThat(bookingID,equalTo(14));
+        assertThat(bookingID,equalTo(15));
 //      Assert using TestNG
-        Assert.assertEquals(bookingID, 14);
+        Assert.assertEquals(bookingID, 15);
      }
 //  PUT request
      @Test
